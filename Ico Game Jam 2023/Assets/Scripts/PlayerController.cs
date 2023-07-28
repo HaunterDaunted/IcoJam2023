@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Attack")]
 	[SerializeField] private Transform bulletSpawnPoint;
 	[SerializeField] private GameObject bullet;
-	
+
 	
 	private void Update()
 	{
@@ -38,6 +38,13 @@ public class PlayerController : MonoBehaviour
 	
 	public void Attack()
 	{
-		Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		mousePosition.z = 0f;
+		
+		GameObject newBulletGO = Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+		PlayerBullet newBullet = newBulletGO.GetComponent<PlayerBullet>();
+		
+		Vector3 targetDir = mousePosition - this.transform.position;
+		newBullet.targetDirection = targetDir;
 	}
 }

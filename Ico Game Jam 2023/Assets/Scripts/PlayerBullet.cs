@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
+	public Vector3 targetDirection;
+	
 	[SerializeField] private float speed;
 	[SerializeField] private float lifetime;
-
+	[SerializeField] private float damageToEnemy;
+	
+	private Rigidbody2D thisRigidbody2D;
+	
+	
+	private void Awake()
+	{
+		thisRigidbody2D = GetComponent<Rigidbody2D>();
+	}
 	
 	private void Start()
 	{
+		//move bullet
+		thisRigidbody2D.AddForce(targetDirection.normalized * speed);
+		
 		StartCoroutine(WaitToDestroySelf());
 	}
 	
@@ -19,8 +32,5 @@ public class PlayerBullet : MonoBehaviour
 		Destroy(this.gameObject);
 	}
 	
-	private void Update()
-	{
-		transform.position += new Vector3(transform.position.x, transform.position.y, transform.position.z) * speed * Time.deltaTime;
-	}
+	
 }
