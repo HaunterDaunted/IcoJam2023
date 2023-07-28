@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private float moveSpeed;
 	
+	[Header("Attack")]
+	[SerializeField] private Transform bulletSpawnPoint;
+	[SerializeField] private GameObject bullet;
+	
 	private Vector2 moveVector;
 	
 	private Rigidbody2D thisRigidbody2D;
@@ -38,5 +42,10 @@ public class PlayerController : MonoBehaviour
 		Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
 		transform.rotation = rot;
 		transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z);
+	}
+	
+	public void Attack()
+	{
+		Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
 	}
 }
