@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	[Header("Movement")]
 	[SerializeField] private float moveSpeed;
 	
 	[Header("Attack")]
 	[SerializeField] private Transform bulletSpawnPoint;
 	[SerializeField] private GameObject bullet;
 	
-	private Vector2 moveVector;
-	
-	private Rigidbody2D thisRigidbody2D;
-	
-	
-	private void Awake()
-	{
-		thisRigidbody2D = GetComponent<Rigidbody2D>();
-	}
 	
 	private void Update()
 	{
@@ -28,10 +20,10 @@ public class PlayerController : MonoBehaviour
 	
 	private void Movement()
 	{
-		float xInput = Input.GetAxisRaw("Horizontal");
-		float yInput = Input.GetAxisRaw("Vertical");
-		moveVector = new Vector2(xInput, yInput);
-		transform.Translate(moveVector.normalized * moveSpeed * Time.deltaTime);
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+		{
+			transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+		}
 	}
 	
 	private void LookAtMouseCursor()
