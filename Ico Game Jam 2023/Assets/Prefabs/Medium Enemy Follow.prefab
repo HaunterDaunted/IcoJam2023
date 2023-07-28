@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3751675319978793547}
   - component: {fileID: 8448395656764505004}
   m_Layer: 0
-  m_Name: Small Follow Enemy
+  m_Name: Medium Enemy Follow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5422635708987696783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.45, y: 2.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
