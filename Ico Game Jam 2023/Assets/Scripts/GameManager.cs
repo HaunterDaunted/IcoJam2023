@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public int playerBulletCountdownTime;
+	public int playerJumpCountdownTime;
 	
-	private PlayerController player;
-	private CooldownText cooldownText;
+	private CountdownText countdownText;
 	
 	
 	private void Awake()
 	{
-		player = FindObjectOfType<PlayerController>();
-		cooldownText = FindObjectOfType<CooldownText>();
+		countdownText = FindObjectOfType<CountdownText>();
 	}
 	
 	private void Start()
 	{
-		playerBulletCountdownTime = 3;
-		cooldownText.text.text = playerBulletCountdownTime.ToString();
+		playerJumpCountdownTime = 3;
+		countdownText.text.text = playerJumpCountdownTime.ToString();
 		StartCoroutine(Countdown3());
 	}
 	
 	private IEnumerator Countdown3()
 	{
-		cooldownText.text.text = playerBulletCountdownTime.ToString();
+		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
 		
@@ -34,7 +32,7 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown2()
 	{
-		cooldownText.text.text = playerBulletCountdownTime.ToString();
+		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
 		
@@ -43,7 +41,7 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown1()
 	{
-		cooldownText.text.text = playerBulletCountdownTime.ToString();
+		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
 		
@@ -52,23 +50,14 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown0()
 	{
-		cooldownText.text.text = playerBulletCountdownTime.ToString();
+		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
 	}
 	
 	private void DecreaseCountdownTime()
 	{
-		if (playerBulletCountdownTime > 0)
-		{
-			playerBulletCountdownTime -= 1;
-			cooldownText.PlayCooldownAnimation();
-		}
-		else
-		{
-			player.Attack();
-			playerBulletCountdownTime = 3;
-			StartCoroutine(Countdown3());
-		}
+		playerJumpCountdownTime -= 1;
+		countdownText.PlayCooldownAnimation();
 	}
 }

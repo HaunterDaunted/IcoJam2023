@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CooldownText : MonoBehaviour
+public class CountdownText : MonoBehaviour
 {
 	public TMP_Text text;
 	
