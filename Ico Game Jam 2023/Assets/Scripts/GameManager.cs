@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public int playerJumpCountdownTime;
+	private int playerJumpCountdownTime;
 	
 	private CountdownText countdownText;
+	
+	private PlayerMovement player;
 	
 	
 	private void Awake()
 	{
 		countdownText = FindObjectOfType<CountdownText>();
+		
+		player = FindObjectOfType<PlayerMovement>();
 	}
 	
 	private void Start()
@@ -57,7 +61,29 @@ public class GameManager : MonoBehaviour
 	
 	private void DecreaseCountdownTime()
 	{
-		playerJumpCountdownTime -= 1;
-		countdownText.PlayCooldownAnimation();
+		if (playerJumpCountdownTime > 0)
+		{
+			if (player.isGrounded)
+			{
+				player.canJump = false;
+				playerJumpCountdownTime -= 1;
+				countdownText.PlayCooldownAnimation();
+			}
+			
+		}
+			else
+			{
+				player.canJump = true;
+				player.Jump();
+				
+				//reset playerJumpCountdownTime
+				playerJumpCountdownTime = 3;
+				StartCoroutine(Countdown3());
+			}
+	}
+	
+	private void Update()
+	{
+		Debug.Log(playerJumpCountdownTime);
 	}
 }
