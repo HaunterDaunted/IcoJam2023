@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 	private IEnumerator Countdown0()
 	{
 		playerJumpCountdownTime = 0;
-		countdownText.text.text = playerJumpCountdownTime.ToString();
+		countdownText.text.text = "JUMP!";
 		
 		if (player.isGrounded)
 		{

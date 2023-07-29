@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Jumping")]
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float distanceToCheck;
-	[SerializeField] private float mainGravity = 10f;
-	[SerializeField] private float fallingGravity = 30f;
+	[SerializeField] private float mainGravity;
+	[SerializeField] private float fallingGravity;
 	public bool isGrounded;
 	public bool canJump;
 	
