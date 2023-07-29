@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown3()
 	{
+		playerJumpCountdownTime = 3;
 		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown2()
 	{
+		playerJumpCountdownTime = 2;
 		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown1()
 	{
+		playerJumpCountdownTime = 1;
 		countdownText.text.text = playerJumpCountdownTime.ToString();
 		yield return new WaitForSeconds(1f);
 		DecreaseCountdownTime();
@@ -54,9 +57,19 @@ public class GameManager : MonoBehaviour
 	
 	private IEnumerator Countdown0()
 	{
+		playerJumpCountdownTime = 0;
 		countdownText.text.text = playerJumpCountdownTime.ToString();
+		
+		if (player.isGrounded)
+		{
+			player.canJump = true;
+			player.Jump();
+		}
+		
 		yield return new WaitForSeconds(1f);
-		DecreaseCountdownTime();
+		
+		//reset playerJumpCountdownTime
+		StartCoroutine(Countdown3());
 	}
 	
 	private void DecreaseCountdownTime()
@@ -66,24 +79,9 @@ public class GameManager : MonoBehaviour
 			if (player.isGrounded)
 			{
 				player.canJump = false;
-				playerJumpCountdownTime -= 1;
 				countdownText.PlayCooldownAnimation();
 			}
 			
 		}
-			else
-			{
-				player.canJump = true;
-				player.Jump();
-				
-				//reset playerJumpCountdownTime
-				playerJumpCountdownTime = 3;
-				StartCoroutine(Countdown3());
-			}
-	}
-	
-	private void Update()
-	{
-		Debug.Log(playerJumpCountdownTime);
 	}
 }

@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
 	private void Update()
 	{
 		HorizontalMovement();
-		Jump();
 	}
 	
 	private void HorizontalMovement()
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 	
 	public void Jump()
 	{
-		if (isGrounded && canJump)
+		if (canJump)
 		{
 			thisRigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			canJump = false;
