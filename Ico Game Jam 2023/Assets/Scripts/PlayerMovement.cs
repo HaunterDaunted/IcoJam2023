@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Jumping")]
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float distanceToCheck;
+	[SerializeField] private float mainGravity = 10f;
+	[SerializeField] private float fallingGravity = 30f;
 	public bool isGrounded;
 	public bool canJump;
 	
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		HorizontalMovement();
 		GroundCheck();
+		PlayerGravity();
 	}
 	
 	private void HorizontalMovement()
@@ -51,6 +54,18 @@ public class PlayerMovement : MonoBehaviour
 		else
 		{
 			isGrounded = false;
+		}
+	}
+	
+	private void PlayerGravity()
+	{
+		if (thisRigidbody2D.velocity.y >= 0f)
+		{
+			thisRigidbody2D.gravityScale = mainGravity;
+		}
+		else
+		{
+			thisRigidbody2D.gravityScale = fallingGravity;
 		}
 	}
 	
