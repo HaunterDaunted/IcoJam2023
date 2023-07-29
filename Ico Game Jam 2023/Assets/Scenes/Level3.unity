@@ -8665,7 +8665,7 @@ PrefabInstance:
       objectReference: {fileID: 649123153}
     - target: {fileID: 4508593228390161030, guid: 412fbca886969294fb5812bea1fa51cf, type: 3}
       propertyPath: nextLevel
-      value: 
+      value: Level4
       objectReference: {fileID: 0}
     - target: {fileID: 8077222043811168092, guid: 412fbca886969294fb5812bea1fa51cf, type: 3}
       propertyPath: m_Name
