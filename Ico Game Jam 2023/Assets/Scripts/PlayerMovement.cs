@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	
 	[Header("Jumping")]
 	[SerializeField] private float jumpForce;
+	[SerializeField] private float distanceToCheck;
 	public bool isGrounded;
 	public bool canJump;
 	
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D thisRigidbody2D;
 	
 	private GameManager gameManager;
+	private PlayerMovement player;
 	
 	
 	private void Awake()
@@ -24,11 +26,13 @@ public class PlayerMovement : MonoBehaviour
 		thisRigidbody2D = GetComponent<Rigidbody2D>();
 		
 		gameManager = FindObjectOfType<GameManager>();
+		player = FindObjectOfType<PlayerMovement>();
 	}
 	
 	private void Update()
 	{
 		HorizontalMovement();
+		GroundCheck();
 	}
 	
 	private void HorizontalMovement()
@@ -38,17 +42,13 @@ public class PlayerMovement : MonoBehaviour
 		transform.Translate(moveVector * moveSpeed * Time.deltaTime);
 	}
 	
-	private void OnCollisionEnter2D(Collision2D other)
+	private void GroundCheck()
 	{
-		if (other.gameObject.tag == "Ground")
+		if (Physics2D.Raycast(transform.position, Vector2.down, distanceToCheck))
 		{
 			isGrounded = true;
 		}
-	}
-	
-	private void OnCollisionExit2D(Collision2D other)
-	{
-		if (other.gameObject.tag == "Ground")
+		else
 		{
 			isGrounded = false;
 		}
