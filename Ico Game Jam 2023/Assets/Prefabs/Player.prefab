@@ -123,7 +123,7 @@ MonoBehaviour:
   jumpForce: 30
   distanceToCheck: 0.5
   mainGravity: 5
-  fallingGravity: 15
+  fallingGravity: 10
   isGrounded: 0
   canJump: 0
 --- !u!1 &7613686805259420026
