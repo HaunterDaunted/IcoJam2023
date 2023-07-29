@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+	[SerializeField] private Image fader;
+	
 	private int playerJumpCountdownTime;
 	
 	private CountdownText countdownText;
-	
 	private PlayerMovement player;
 	
 	
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
 	
 	private void Start()
 	{
+		fader.GetComponent<Animator>().SetBool("fadingIn", true);
 		playerJumpCountdownTime = 3;
 		countdownText.text.text = playerJumpCountdownTime.ToString();
 		StartCoroutine(Countdown3());
@@ -81,7 +84,6 @@ public class GameManager : MonoBehaviour
 				player.canJump = false;
 				countdownText.PlayCooldownAnimation();
 			}
-			
 		}
 	}
 }

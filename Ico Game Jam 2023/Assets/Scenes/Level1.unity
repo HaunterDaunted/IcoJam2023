@@ -967,6 +967,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 5755755323176230668, guid: 07a111b82c2da9b41a71e0dfb486d711, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4735851
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755755323176230668, guid: 07a111b82c2da9b41a71e0dfb486d711, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6889849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755755323176230668, guid: 07a111b82c2da9b41a71e0dfb486d711, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.2602587
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755755323176230668, guid: 07a111b82c2da9b41a71e0dfb486d711, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15550756
+      objectReference: {fileID: 0}
     - target: {fileID: 7335573089379830497, guid: 07a111b82c2da9b41a71e0dfb486d711, type: 3}
       propertyPath: fader
       value: 
@@ -1797,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 9042505983242678415, guid: 0e4a6386d4c2fab499c4cf5f922b4166, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 1652795255}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
