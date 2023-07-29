@@ -34,6 +34,5 @@ public class LevelExit : MonoBehaviour
 		fader.GetComponent<Animator>().SetBool("fadingIn", true);
 		yield return new WaitForSeconds(1f);
 		SceneManager.LoadScene(nextLevel);
-		playerGO.SetActive(true);
 	}
 }
