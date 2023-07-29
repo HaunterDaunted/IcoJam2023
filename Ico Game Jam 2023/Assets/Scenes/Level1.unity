@@ -479,6 +479,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 977527154777720427, guid: 1970a2a080df0554892823b9deada68e, type: 3}
   m_PrefabInstance: {fileID: 4630143737411432609}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652795255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6184131087931545789, guid: 979be3bcae159d441b51de26501802ec, type: 3}
+  m_PrefabInstance: {fileID: 8472023974186194449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &766698573925173063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,6 +718,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5118312089089863318, guid: b3632a969c10577449a0129b42fb6fe2, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 1652795255}
     - target: {fileID: 5118312089089863318, guid: b3632a969c10577449a0129b42fb6fe2, type: 3}
       propertyPath: playerGO
       value: 

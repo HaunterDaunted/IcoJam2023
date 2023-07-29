@@ -120,11 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 25
+  jumpForce: 30
   distanceToCheck: 0.5
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
   mainGravity: 5
   fallingGravity: 15
   isGrounded: 0
