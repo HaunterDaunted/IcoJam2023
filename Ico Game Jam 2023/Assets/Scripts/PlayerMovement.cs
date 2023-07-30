@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float distanceToCheck;
 	[SerializeField] private float mainGravity;
 	[SerializeField] private float fallingGravity;
+	[SerializeField] private GameObject jumpParticles;
+	[SerializeField] private Transform jumpParticlesSpawnPoint;
 	public bool isGrounded;
 	public bool canJump;
 	
@@ -74,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 		if (canJump)
 		{
 			thisRigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			Instantiate(jumpParticles, jumpParticlesSpawnPoint.position, jumpParticlesSpawnPoint.rotation);
 			canJump = false;
 		}
 	}

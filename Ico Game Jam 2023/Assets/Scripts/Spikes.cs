@@ -7,6 +7,7 @@ public class Spikes : MonoBehaviour
 {
 	[SerializeField] private GameObject checkpoint;
 	[SerializeField] private GameObject playerGO;
+	[SerializeField] private GameObject playerDeathParticles;
 	[SerializeField] private Image fader;
 	
 	private PlayerMovement playerScript;
@@ -27,6 +28,7 @@ public class Spikes : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			playerGO = other.gameObject;
+			Instantiate(playerDeathParticles, playerGO.transform.position, playerGO.transform.rotation);
 			playerGO.SetActive(false);
 			
 			StartCoroutine(GoToCheckpoint());
