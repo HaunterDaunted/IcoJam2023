@@ -20,7 +20,7 @@ public class DialogueTextTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			thisAudioSource.Play();
+			if (thisAudioSource.enabled == true) thisAudioSource.Play();
 			dialogueTextToShow.GetComponent<Animator>().SetBool("fadingIn", true);
 		}
 	}
