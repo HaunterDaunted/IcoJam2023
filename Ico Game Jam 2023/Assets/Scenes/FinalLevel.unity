@@ -322,6 +322,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733365008133891679, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e1545661b68b2a45a158159307a0fb3, type: 3}
     - target: {fileID: 2908433569380529380, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
       propertyPath: m_Name
       value: Dialogue Text Trigger (4)
@@ -947,6 +951,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733365008133891679, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a2597e714b398f4e93026b84f5db270, type: 3}
     - target: {fileID: 2908433569380529380, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
       propertyPath: m_Name
       value: Dialogue Text Trigger (1)
@@ -1069,6 +1077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733365008133891679, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99b93bd9cdc5fa4408124ecb9c5b48a4, type: 3}
     - target: {fileID: 2908433569380529380, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
       propertyPath: m_Name
       value: Dialogue Text Trigger (3)
@@ -1305,6 +1317,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733365008133891679, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9fa545510818dc4aa38b309df168583, type: 3}
     - target: {fileID: 2908433569380529380, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
       propertyPath: m_Name
       value: Dialogue Text Trigger (2)
@@ -25215,6 +25231,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733365008133891679, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ed1e27e5a2c1804397c1180c0d995f9, type: 3}
     - target: {fileID: 2908433569380529380, guid: 69d43c2d5f47bbf45bd86b69133edf15, type: 3}
       propertyPath: m_Name
       value: Dialogue Text Trigger
