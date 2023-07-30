@@ -14,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float fallingGravity;
 	[SerializeField] private GameObject jumpParticles;
 	[SerializeField] private Transform jumpParticlesSpawnPoint;
+	[SerializeField] private AudioClip jumpSFX;
 	public bool isGrounded;
 	public bool canJump;
 	
 	private Vector2 moveVector;
 	
 	private Rigidbody2D thisRigidbody2D;
+	private AudioSource thisAudioSource;
 	
 	private GameManager gameManager;
 	private PlayerMovement player;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Awake()
 	{
 		thisRigidbody2D = GetComponent<Rigidbody2D>();
+		thisAudioSource = GetComponent<AudioSource>();
 		
 		gameManager = FindObjectOfType<GameManager>();
 		player = FindObjectOfType<PlayerMovement>();
@@ -75,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (canJump)
 		{
+			thisAudioSource.pitch = Random.Range(1f, 1.1f);
+			thisAudioSource.PlayOneShot(jumpSFX);
 			thisRigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			Instantiate(jumpParticles, jumpParticlesSpawnPoint.position, jumpParticlesSpawnPoint.rotation);
 			canJump = false;
