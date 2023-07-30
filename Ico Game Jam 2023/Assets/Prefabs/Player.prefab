@@ -129,7 +129,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6eecc55cecb178244bf2c87e72dac536, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -180,7 +180,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 165
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
