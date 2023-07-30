@@ -8,7 +8,7 @@ public class Spikes : MonoBehaviour
 	[SerializeField] private GameObject checkpoint;
 	[SerializeField] private GameObject playerGO;
 	[SerializeField] private GameObject playerDeathParticles;
-	[SerializeField] private AudioClip playerDeathSFX;
+	[SerializeField] private GameObject playerDeathGOForSFX;
 	[SerializeField] private Image fader;
 	
 	private PlayerMovement playerScript;
@@ -28,8 +28,8 @@ public class Spikes : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
+			Instantiate(playerDeathGOForSFX, transform.position, transform.rotation);
 			playerGO = other.gameObject;
-			playerGO.GetComponent<AudioSource>().PlayOneShot(playerDeathSFX);
 			Instantiate(playerDeathParticles, playerGO.transform.position, playerGO.transform.rotation);
 			playerGO.SetActive(false);
 			
