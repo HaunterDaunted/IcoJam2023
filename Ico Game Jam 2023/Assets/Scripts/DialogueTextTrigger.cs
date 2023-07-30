@@ -8,10 +8,19 @@ public class DialogueTextTrigger : MonoBehaviour
 	[SerializeField] private TMP_Text dialogueTextToShow;
 	
 	
+	private AudioSource thisAudioSource;
+	
+	
+	private void Awake()
+	{
+		thisAudioSource = GetComponent<AudioSource>();
+	}
+	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
+			thisAudioSource.Play();
 			dialogueTextToShow.GetComponent<Animator>().SetBool("fadingIn", true);
 		}
 	}
@@ -20,6 +29,7 @@ public class DialogueTextTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
+			thisAudioSource.enabled = false;
 			dialogueTextToShow.GetComponent<Animator>().SetBool("fadingIn", false);
 		}
 	}
