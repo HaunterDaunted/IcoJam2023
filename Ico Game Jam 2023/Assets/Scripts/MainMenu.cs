@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	[SerializeField] private GameObject optionsMenuCanvas;
 	[SerializeField] private AudioClip buttonClickedSFX;
 	
 	private AudioSource thisAudioSource;
