@@ -882,7 +882,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19acc6be6c74c3a4d87d4a308a83cf4c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5914,7 +5914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cad60b2bc989c34a9b9c8eaaf129cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenuCanvas: {fileID: 0}
   buttonClickedSFX: {fileID: 8300000, guid: 197af5bbb794f254885698f16c631108, type: 3}
 --- !u!4 &1692861261
 Transform:
