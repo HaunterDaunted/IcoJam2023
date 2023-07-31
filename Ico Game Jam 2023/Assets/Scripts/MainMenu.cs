@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 	[SerializeField] private GameObject optionsMenuCanvas;
-	[SerializeField] private GameObject creditsMenuCanvas;
+	[SerializeField] private AudioClip buttonClickedSFX;
 	
+	private AudioSource thisAudioSource;
+	
+	
+	private void Awake()
+	{
+		thisAudioSource = GetComponent<AudioSource>();
+	}
 	
 	public void PlayGame()
 	{
+		thisAudioSource.PlayOneShot(buttonClickedSFX);
 		SceneManager.LoadScene("Level1");
 	}
 }
