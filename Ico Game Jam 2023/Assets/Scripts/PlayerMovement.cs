@@ -38,16 +38,19 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void Update()
 	{
-		HorizontalMovement();
 		GroundCheck();
 		PlayerGravity();
+	}
+	
+	private void FixedUpdate()
+	{
+		HorizontalMovement();
 	}
 	
 	private void HorizontalMovement()
 	{
 		float xInput = Input.GetAxisRaw("Horizontal");
-		moveVector = new Vector2(xInput, 0f);
-		transform.Translate(moveVector * moveSpeed * Time.deltaTime);
+		thisRigidbody2D.velocity = new Vector2(xInput * moveSpeed * Time.deltaTime, thisRigidbody2D.velocity.y);
 	}
 	
 	private void GroundCheck()
